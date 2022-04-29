@@ -2,7 +2,7 @@
   connection: local
   tags: always
   environment:
-      PATH: /home/linuxbrew/.linuxbrew/bin:{{ ansible_facts.env.PATH }}
+      PATH: /home/linuxbrew/.linuxbrew/bin:{{ ansible_env.PATH }}
   tasks:
   - homebrew:
       name: curl
