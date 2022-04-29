@@ -6,3 +6,5 @@
   - homebrew:
       name: curl
       state: present
+    environment:
+      PATH: $HOME/linuxbrew/.linuxbrew/bin:{{ ansible_facts.env.PATH }}
