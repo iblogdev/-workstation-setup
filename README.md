@@ -1,1 +1,1 @@
-# -workstation-setup
+# workstation-setup
