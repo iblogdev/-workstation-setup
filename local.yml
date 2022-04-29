@@ -9,5 +9,6 @@
         - curl
         - wget
         - golang
+        - zsh
       state: latest
       
