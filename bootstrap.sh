@@ -7,4 +7,4 @@ sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/insta
 brew install ansible
 
 # invoke ansible
-sudo ansible-pull -U https://github.com/iblogdev/workstation-setup.git
+ansible-pull -U https://github.com/iblogdev/workstation-setup.git
