@@ -1,12 +1,10 @@
 - hosts: localhost
   connection: local
   tags: always
-  environment:
-      PATH: /home/linuxbrew/.linuxbrew/bin:{{ ansible_env.PATH }}
   tasks:
-  - homebrew:
-      name: curl
-  - homebrew:
-      name: go
-  - homebrew_cask:
-      name: visual-studio-code
+  - name: Install packages
+    ansible.builtin.package:
+      name:
+        curl
+      state: latest
+      
