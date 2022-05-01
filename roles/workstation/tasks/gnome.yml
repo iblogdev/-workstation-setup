@@ -7,3 +7,38 @@
   dconf:
     key: "/org/gnome/shell/favorite-apps"
     value: "['thunderbird.desktop', 'org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'code.desktop', 'hyper.desktop']"
+
+- name: Set the dock to aut-hide
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/dock-fixed"
+    value: "false"
+
+- name: Set the dock position
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/dock-position"
+    value: "'BOTTOM'"
+
+- name: Set the dock height
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/extend-height"
+    value: "false"    
+
+- name: Enable the night light
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled"
+    value: "true"
+
+- name: Set the night light temperature
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature"
+    value: "uint32 2700"
+
+- name: Set the mouse speed
+  dconf:
+    key: "/org/gnome/desktop/peripherals/mouse/speed"
+    value: "0.588"
+
+- name: Set the touchpad speed
+  dconf:
+    key: "/org/gnome/desktop/peripherals/touchpad/speed"
+    value: "0.588"
