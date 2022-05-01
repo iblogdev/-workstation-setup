@@ -6,5 +6,7 @@
   register: deb_architecture
 
 - include_tasks: git.yml
+- include_tasks: gnome.yml
 - include_tasks: terraform.yml
 - include_tasks: chrome.yml
+- include_tasks: other.yml

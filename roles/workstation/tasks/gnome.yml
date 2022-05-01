@@ -1,0 +1,9 @@
+- name: Install psutil python package
+  become: true
+  pip:
+    name: psutil
+
+- name: Set the gnome favorite-apps
+  dconf:
+    key: "/org/gnome/shell/favorite-apps"
+    value: "['thunderbird.desktop', 'org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'code.desktop', 'hyper.desktop']"
