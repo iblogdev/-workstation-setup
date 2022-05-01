@@ -10,4 +10,4 @@ brew install git
 brew install ansible
 
 # invoke ansible
-ansible-pull -U https://github.com/iblogdev/workstation-setup.git
+ansible-pull --ask-become-pass -U https://github.com/iblogdev/workstation-setup.git
