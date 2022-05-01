@@ -1,0 +1,20 @@
+- name: Add hashicorp apt signing key
+  ansible.builtin.apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    state: present
+  when: ansible_distribution == "Ubuntu"
+
+- name: Add hashicorp repository into sources list
+  ansible.builtin.apt_repository:
+    repo: "deb [arch={{ deb_architecture.stdout }}] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
+    state: present
+    filename: hashicorp
+  when: ansible_distribution == "Ubuntu"  
+
+- name: Install Terraform
+  become: true
+  ansible.builtin.package:
+    name:
+      - terraform
+    state: latest
+    update_cache: yes
