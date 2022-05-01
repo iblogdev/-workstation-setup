@@ -1,3 +1,5 @@
 [user]
     name=saravana periyasamy
     email=saravanakumar.periyasamy@gmail.com
+[pull]
+    rebase=false    
