@@ -36,9 +36,9 @@
 - name: Set the mouse speed
   dconf:
     key: "/org/gnome/desktop/peripherals/mouse/speed"
-    value: "0.588"
+    value: "0.5"
 
 - name: Set the touchpad speed
   dconf:
     key: "/org/gnome/desktop/peripherals/touchpad/speed"
-    value: "0.588"
+    value: "0.5"

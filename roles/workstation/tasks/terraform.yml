@@ -1,10 +1,12 @@
 - name: Add hashicorp apt signing key
+  become: true
   ansible.builtin.apt_key:
     url: https://apt.releases.hashicorp.com/gpg
     state: present
   when: ansible_distribution == "Ubuntu"
 
 - name: Add hashicorp repository into sources list
+  become: true
   ansible.builtin.apt_repository:
     repo: "deb [arch={{ deb_architecture.stdout }}] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
     state: present
