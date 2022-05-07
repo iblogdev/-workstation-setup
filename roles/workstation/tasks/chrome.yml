@@ -11,6 +11,7 @@
   ansible.builtin.apt_repository:
     repo: deb [arch={{ deb_architecture.stdout }}] http://dl.google.com/linux/chrome/deb/ stable main
     state: present
+    filename: google
 
 - name: Install Chrome
   become: true
