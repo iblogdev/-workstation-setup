@@ -2,6 +2,8 @@
   ansible.builtin.apt_key:
     url: https://dl.google.com/linux/linux_signing_key.pub
     state: present
+    keyring: /etc/apt/trusted.gpg.d/google.gpg
+
 
 - name: Add chrome repository into sources list
   ansible.builtin.apt_repository:

@@ -3,6 +3,7 @@
   ansible.builtin.apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
+    keyring: /etc/apt/trusted.gpg.d/docker.gpg
   when: ansible_distribution == "Ubuntu"
 
 - name: Add docker repository into sources list

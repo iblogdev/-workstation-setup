@@ -1,0 +1,5 @@
+- name: setup sudoers
+  become: true
+  ansible.builtin.copy:
+    src: files/etc/sudoers.d/00-saravana
+    dest: /etc/sudoers.d/00-saravana

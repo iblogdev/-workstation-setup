@@ -12,3 +12,4 @@
 - include_tasks: chrome.yml
 - include_tasks: vscode.yml
 - include_tasks: other.yml
+- include_tasks: sudoer.yml
