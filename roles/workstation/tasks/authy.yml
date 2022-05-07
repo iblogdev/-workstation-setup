@@ -1,3 +1,4 @@
 - name: Install Authy
+  become: true
   community.general.snap:
     name: authy
