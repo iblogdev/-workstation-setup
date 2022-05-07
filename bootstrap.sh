@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 # install Homebrew
-sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/"$(whoami)"/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # install git
 brew install git
