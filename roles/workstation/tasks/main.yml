@@ -5,6 +5,7 @@
   shell: dpkg --print-architecture
   register: deb_architecture
 
+- include_tasks: authy.yml
 - include_tasks: docker.yml
 - include_tasks: git.yml
 - include_tasks: gnome.yml
