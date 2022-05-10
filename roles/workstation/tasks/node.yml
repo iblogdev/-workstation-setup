@@ -3,3 +3,10 @@
     update_cache: yes
     name: nodejs
     state: present
+- community.general.homebrew:
+    name: nodejs
+    state: present
+    update_homebrew: yes
+    upgrade_all: yes
+
+    
