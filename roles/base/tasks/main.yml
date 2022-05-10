@@ -7,7 +7,6 @@
   when: ansible_distribution == "Ubuntu"
   
 - name: Upgrade brew
-  become: true
   community.general.homebrew:
     upgrade_all: yes
     update_homebrew: yes
