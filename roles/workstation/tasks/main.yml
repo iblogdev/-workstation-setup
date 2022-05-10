@@ -11,7 +11,7 @@
 - include_tasks: git.yml
 - include_tasks: gnome.yml
 - include_tasks: idea.yml
-- include tasks: node.yml
+- include_tasks: node.yml
 - include_tasks: other.yml
 - include_tasks: sudoer.yml
 - include_tasks: terraform.yml
