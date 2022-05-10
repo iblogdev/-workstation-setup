@@ -4,6 +4,7 @@
 - name: Get DEB architecture
   shell: dpkg --print-architecture
   register: deb_architecture
+  when: ansible_distribution == "Ubuntu"
 
 - include_tasks: node.yml
 - include_tasks: authy.yml
