@@ -1,9 +1,5 @@
 - name: "Install nodejs"
-  apt:
-    update_cache: yes
-    name: nodejs
-    state: present
-- community.general.homebrew:
+  community.general.homebrew:
     name: nodejs
     state: present
     update_homebrew: yes
