@@ -2,3 +2,4 @@
   become: true
   community.general.snap:
     name: authy
+  when: ansible_distribution == "Ubuntu"
