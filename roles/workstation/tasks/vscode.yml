@@ -1,9 +1,10 @@
-- name: Add microsoft apt signing key
+  - name: Add microsoft apt signing key
   become: true
   ansible.builtin.apt_key:
     url: https://packages.microsoft.com/keys/microsoft.asc
     keyring: /etc/apt/trusted.gpg.d/microsoft.gpg
     state: present
+  when: ansible_distribution == "Ubuntu"
 
 - name: Add vscode repository into sources list
   become: true
@@ -11,6 +12,7 @@
     repo: deb [arch={{ deb_architecture.stdout }}] https://packages.microsoft.com/repos/vscode stable main
     state: present
     filename: microsoft
+  when: ansible_distribution == "Ubuntu"  
 
 - name: Install vscode
   become: true
@@ -19,8 +21,10 @@
       - code
     state: latest
     update_cache: yes
+  when: ansible_distribution == "Ubuntu"
 
 - name: setup vscode extensions
   ansible.builtin.copy:
     src: files/home/.vscode/extensions.json
     dest: "{{ ansible_env.HOME }}/.vscode/extensions.json"
+  when: ansible_distribution == "Ubuntu"  

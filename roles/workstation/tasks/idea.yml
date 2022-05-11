@@ -3,3 +3,4 @@
   community.general.snap:
     name: intellij-idea-ultimate
     classic: yes
+  when: ansible_distribution == "Ubuntu"  

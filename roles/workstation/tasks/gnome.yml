@@ -32,13 +32,16 @@
   dconf:
     key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature"
     value: "uint32 2700"
+  when: ansible_distribution == "Ubuntu"
 
 - name: Set the mouse speed
   dconf:
     key: "/org/gnome/desktop/peripherals/mouse/speed"
     value: "0.5"
+  when: ansible_distribution == "Ubuntu"
 
 - name: Set the touchpad speed
   dconf:
     key: "/org/gnome/desktop/peripherals/touchpad/speed"
     value: "0.5"
+  when: ansible_distribution == "Ubuntu"  

@@ -4,7 +4,7 @@
     url: https://dl.google.com/linux/linux_signing_key.pub
     state: present
     keyring: /etc/apt/trusted.gpg.d/google.gpg
-
+  when: ansible_distribution == "Ubuntu"
 
 - name: Add chrome repository into sources list
   become: true
@@ -12,6 +12,7 @@
     repo: deb [arch={{ deb_architecture.stdout }}] http://dl.google.com/linux/chrome/deb/ stable main
     state: present
     filename: google
+  when: ansible_distribution == "Ubuntu"
 
 - name: Install Chrome
   become: true
@@ -20,3 +21,4 @@
       - google-chrome-stable
     state: latest
     update_cache: yes
+  when: ansible_distribution == "Ubuntu"  
