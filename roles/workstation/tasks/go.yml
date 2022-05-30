@@ -1,0 +1,5 @@
+- name: Download golang
+  get_url:
+    url: https://go.dev/dl/go1.18.2.darwin-amd64.pkg
+    dest: /usr/local/go
+  when: ansible_distribution == "MacOSX"
