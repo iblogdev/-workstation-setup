@@ -1,4 +1,4 @@
-  - name: Add microsoft apt signing key
+- name: Add microsoft apt signing key
   become: true
   ansible.builtin.apt_key:
     url: https://packages.microsoft.com/keys/microsoft.asc
