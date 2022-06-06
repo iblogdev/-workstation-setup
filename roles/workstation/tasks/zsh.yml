@@ -1,1 +1,5 @@
-
+- name: setup zsh
+  community.general.homebrew:
+    name: zsh
+    state: present
+  when: ansible_distribution == "MacOSX"  
