@@ -8,6 +8,7 @@
 
 - include_tasks: node.yml
 - include_tasks: go.yml
+- include_tasks: zsh.yml
 - include_tasks: authy.yml
 - include_tasks: chrome.yml
 - include_tasks: docker.yml
