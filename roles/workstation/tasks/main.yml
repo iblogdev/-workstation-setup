@@ -6,7 +6,7 @@
   register: deb_architecture
   when: ansible_distribution == "Ubuntu"
 
-- include_tasks: atom.yml
+#- include_tasks: atom.yml
 - include_tasks: shell.yml
 - include_tasks: zsh.yml
 - include_tasks: node.yml
