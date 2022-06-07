@@ -1,6 +1,6 @@
 - name: setup zsh
   community.general.homebrew:
-    name: zsh
+    name: zsh, fzf, ripgrep, bat, fd, findutils jq
     state: present
   when: ansible_distribution == "MacOSX"  
   
