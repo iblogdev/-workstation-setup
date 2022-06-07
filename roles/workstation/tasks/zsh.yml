@@ -3,3 +3,6 @@
     name: zsh
     state: present
   when: ansible_distribution == "MacOSX"  
+  
+- name: Set zsh as default
+  ansible.builtin.command: chsh -s /bin/zsh
