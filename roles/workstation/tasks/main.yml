@@ -8,7 +8,7 @@
 
 #- include_tasks: atom.yml
 #- include_tasks: shell.yml
-- include_tasks: zsh.yml
+#- include_tasks: zsh.yml
 - include_tasks: node.yml
 - include_tasks: go.yml
 - include_tasks: authy.yml
