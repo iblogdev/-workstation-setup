@@ -3,7 +3,7 @@
     name:
      - helm
      - helmfile
-     - kubernetes-cli@1.22
+     - kubernetes-cli
      - kustomize
      - sops
     state: present

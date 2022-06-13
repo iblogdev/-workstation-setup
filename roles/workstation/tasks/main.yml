@@ -11,7 +11,6 @@
 - include_tasks: awscli.yml
 - include_tasks: chrome.yml
 - include_tasks: cue.yml
-- include_tasks: tmux.yml
 - include_tasks: docker.yml
 - include_tasks: git.yml
 - include_tasks: gnome.yml
@@ -25,5 +24,6 @@
 - include_tasks: slack.yml
 - include_tasks: sudoer.yml
 - include_tasks: terraform.yml
+- include_tasks: tmux.yml
 - include_tasks: vscode.yml
 #- include_tasks: zsh.yml
