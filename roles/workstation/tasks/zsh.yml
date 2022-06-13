@@ -16,7 +16,7 @@
   when: ansible_distribution == "MacOSX"
   
 - name: Set login shell of user {{ ansible_env.USER }} to `/bin/zsh` with `usermod`
-  ansible.builtin.command: usermod --shell /bin/zsh {{ ansible_env.USER }} || exit 0
+  ansible.builtin.command: chsh -s /bin/zsh || exit 0
   become: true
   changed_when: false
 # - name: Setup zsh
