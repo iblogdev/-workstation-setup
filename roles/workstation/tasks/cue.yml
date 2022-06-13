@@ -1,0 +1,5 @@
+- name: Install cuelang
+  community.general.homebrew:
+    name: cue-lang/tap/cue
+    state: present
+  when: ansible_distribution == "MacOSX" 
