@@ -28,3 +28,9 @@
     src: files/home/.vscode/extensions.json
     dest: "{{ ansible_env.HOME }}/.vscode/extensions.json"
   when: ansible_distribution == "Ubuntu"  
+
+- name: Install vscode
+  community.general.homebrew_cask:
+    name: visual-studio-code
+    state: present
+  when: ansible_distribution == "MacOSX"    
