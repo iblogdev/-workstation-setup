@@ -6,9 +6,11 @@
   register: deb_architecture
   when: ansible_distribution == "Ubuntu"
 
+- include_tasks: python.yml
 - include_tasks: atom.yml
 - include_tasks: authy.yml
 - include_tasks: awscli.yml
+- include_tasks: tmux.yml
 - include_tasks: chrome.yml
 - include_tasks: cue.yml
 - include_tasks: docker.yml
@@ -24,6 +26,5 @@
 - include_tasks: slack.yml
 - include_tasks: sudoer.yml
 - include_tasks: terraform.yml
-- include_tasks: tmux.yml
 - include_tasks: vscode.yml
 - include_tasks: zsh.yml

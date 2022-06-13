@@ -1,0 +1,5 @@
+- name: Install Python
+  community.general.homebrew:
+    name: python3
+    state: present
+  when: ansible_distribution == "MacOSX"  
