@@ -6,8 +6,10 @@
      - kubernetes-cli
      - kustomize
      - sops
+     - kind
     state: present
   when: ansible_distribution == "MacOSX"  
 
 - name: Install helm plugin
-  ansible.builtin.shell: helm plugin install https://github.com/jkroepke/helm-secrets --version v3.14.0
+  run_once: true
+  ansible.builtin.shell: helm plugin install https://github.com/jkroepke/helm-secrets --version v3.14.0 || exit 0

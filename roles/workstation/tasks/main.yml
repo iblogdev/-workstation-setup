@@ -26,4 +26,4 @@
 - include_tasks: terraform.yml
 - include_tasks: tmux.yml
 - include_tasks: vscode.yml
-#- include_tasks: zsh.yml
+- include_tasks: zsh.yml

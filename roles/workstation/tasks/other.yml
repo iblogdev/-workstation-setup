@@ -4,8 +4,6 @@
     name:
       - curl
       - wget
-      # - golang
-      - zsh
     state: latest
   when: ansible_distribution == "Ubuntu"
 
@@ -14,6 +12,5 @@
     name:
       - curl
       - wget
-      - zsh
     state: present
   when: ansible_distribution == "MacOSX"      
