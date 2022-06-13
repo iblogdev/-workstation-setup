@@ -1,0 +1,10 @@
+- name: Install helm
+  community.general.homebrew:
+    name:
+     - helm
+     - helmfile
+     - kubernetes-cli@1.22
+     - kustomize
+     - sops
+    state: present
+  when: ansible_distribution == "MacOSX"  

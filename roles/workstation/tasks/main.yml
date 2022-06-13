@@ -17,6 +17,7 @@
   when: ansible_distribution == "Ubuntu"
 - include_tasks: go.yml
 - include_tasks: idea.yml
+- include_tasks: k8s.yml
 - include_tasks: node.yml
 - include_tasks: other.yml
 #- include_tasks: shell.yml
