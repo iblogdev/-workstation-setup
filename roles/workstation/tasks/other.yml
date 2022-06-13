@@ -4,7 +4,6 @@
     name:
       - curl
       - wget
-      - golang
+      # - golang
       - zsh
     state: latest
-    update_cache: yes
