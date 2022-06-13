@@ -1,33 +1,38 @@
 - name: Install psutil python package
   become: true
   pip:
-    name: psutil
+    name: psutil  
 
 - name: Set the gnome favorite-apps
   dconf:
     key: "/org/gnome/shell/favorite-apps"
     value: "['thunderbird.desktop', 'org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'code.desktop', 'hyper.desktop']"
+  when: ansible_distribution == "Ubuntu"
 
 - name: Set the dock to aut-hide
   dconf:
     key: "/org/gnome/shell/extensions/dash-to-dock/dock-fixed"
     value: "false"
+  when: ansible_distribution == "Ubuntu"
 
 - name: Set the dock position
   dconf:
     key: "/org/gnome/shell/extensions/dash-to-dock/dock-position"
     value: "'BOTTOM'"
+  when: ansible_distribution == "Ubuntu"
 
 - name: Set the dock height
   dconf:
     key: "/org/gnome/shell/extensions/dash-to-dock/extend-height"
     value: "false"    
+  when: ansible_distribution == "Ubuntu"
 
 - name: Enable the night light
   dconf:
     key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled"
     value: "true"
-
+  when: ansible_distribution == "Ubuntu"
+  
 - name: Set the night light temperature
   dconf:
     key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature"
