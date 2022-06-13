@@ -3,3 +3,9 @@
   community.general.snap:
     name: authy
   when: ansible_distribution == "Ubuntu"
+
+- name: Install Authy
+  community.general.homebrew_cask:
+    name: authy
+    state: present
+  when: ansible_distribution == "MacOSX"  

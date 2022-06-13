@@ -1,6 +1,5 @@
-- name: Unarchive atom file
-  ansible.builtin.unarchive:
-    src: https://github.com/atom/atom/releases/download/v1.60.0/atom-mac.zip
-    dest: /usr/local/bin
-    remote_src: yes
-  when: ansible_distribution == "MacOSX" 
+- name: Install Atom
+  community.general.homebrew_cask:
+    name: atom
+    state: present
+  when: ansible_distribution == "MacOSX"  
