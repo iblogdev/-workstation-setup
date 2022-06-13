@@ -14,6 +14,11 @@
   run_once: true
   ansible.builtin.shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || exit 0
   when: ansible_distribution == "MacOSX"
+  
+- name: Setup zsh
+  run_once: true
+  ansible.builtin.shell: chsh -s /bin/zsh || exit 0
+  when: ansible_distribution == "MacOSX"
 
 - name: setup zshrc
   ansible.builtin.copy:
