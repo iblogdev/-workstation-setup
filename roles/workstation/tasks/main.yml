@@ -11,6 +11,7 @@
 - include_tasks: awscli.yml
 - include_tasks: chrome.yml
 - include_tasks: cue.yml
+- include_tasks: tmux.yml
 - include_tasks: docker.yml
 - include_tasks: git.yml
 - include_tasks: gnome.yml
