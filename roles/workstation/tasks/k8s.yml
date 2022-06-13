@@ -1,4 +1,4 @@
-- name: Install helm
+- name: Install k8s related
   community.general.homebrew:
     name:
      - helm
@@ -8,3 +8,6 @@
      - sops
     state: present
   when: ansible_distribution == "MacOSX"  
+
+- name: Install helm plugin
+  ansible.builtin.shell: helm plugin install https://github.com/jkroepke/helm-secrets --version v3.14.0
