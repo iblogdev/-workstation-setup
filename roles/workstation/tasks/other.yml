@@ -7,3 +7,13 @@
       # - golang
       - zsh
     state: latest
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install other packages
+  community.general.homebrew:
+    name:
+      - curl
+      - wget
+      - zsh
+    state: present
+  when: ansible_distribution == "MacOSX"      
