@@ -1,0 +1,5 @@
+- name: Install Tmux
+  community.general.homebrew_cask:
+    name: tmux
+    state: present
+  when: ansible_distribution == "MacOSX"  
