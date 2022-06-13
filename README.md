@@ -13,5 +13,5 @@ ansible localhost -m setup
 * to run it locally from the downloaded repo
 
 ```bash
-ansible-playbook local.yml
+ansible-playbook local.yml --ask-become-pass
 ```

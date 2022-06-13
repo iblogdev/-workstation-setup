@@ -24,3 +24,10 @@
       - docker-compose-plugin
     state: latest
     update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install Podman
+  community.general.homebrew:
+    name: podman
+    state: present
+  when: ansible_distribution == "MacOSX"     
