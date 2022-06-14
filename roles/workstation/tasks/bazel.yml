@@ -1,0 +1,5 @@
+- name: Install bazel
+  community.general.homebrew:
+    name: bazel
+    state: present
+  when: ansible_distribution == "MacOSX"
