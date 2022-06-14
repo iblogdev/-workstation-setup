@@ -28,7 +28,7 @@
 #- include_tasks: shell.yml
 - include_tasks: slack.yml
 - include_tasks: sudoer.yml
-
 - include_tasks: terraform.yml
+- include_tasks: vault.yml
 - include_tasks: vscode.yml
 - include_tasks: zsh.yml

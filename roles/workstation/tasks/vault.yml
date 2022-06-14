@@ -1,0 +1,5 @@
+- name: Install vault
+  community.general.homebrew:
+    name: vault
+    state: present
+  when: ansible_distribution == "MacOSX"  
