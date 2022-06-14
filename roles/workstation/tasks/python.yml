@@ -1,5 +1,7 @@
 - name: Install Python
   community.general.homebrew:
-    name: python3
+    name: 
+     - python3
+     - pyenv
     state: present
   when: ansible_distribution == "MacOSX"  
