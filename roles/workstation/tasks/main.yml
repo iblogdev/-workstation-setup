@@ -20,12 +20,15 @@
 - include_tasks: go.yml
 - include_tasks: idea.yml
 - include_tasks: k8s.yml
+- include_tasks: mac-tools.yml
+  when: ansible_distribution == "MacOSX"
 - include_tasks: node.yml
 - include_tasks: other.yml
 - include_tasks: python.yml
 #- include_tasks: shell.yml
 - include_tasks: slack.yml
 - include_tasks: sudoer.yml
+
 - include_tasks: terraform.yml
 - include_tasks: vscode.yml
 - include_tasks: zsh.yml

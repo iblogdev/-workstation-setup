@@ -1,0 +1,8 @@
+- name: Install mac specific cask
+  community.general.homebrew_cask:
+    name: 
+      - iterm2
+      - warp
+      - maccy
+    state: present
+  when: ansible_distribution == "MacOSX"

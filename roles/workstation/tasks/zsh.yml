@@ -1,9 +1,3 @@
-- name: Install cask
-  community.general.homebrew_cask:
-    name: iterm2
-    state: present
-  when: ansible_distribution == "MacOSX"
-
 - name: Install zsh
   community.general.homebrew:
     name: zsh
