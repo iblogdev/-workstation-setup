@@ -11,5 +11,5 @@
 
 - name: setup zshrc
   ansible.builtin.copy:
-    src: files/home/.zshrc
+    src: "files/{{ files_prefix }}/.zshrc"
     dest: "{{ ansible_env.HOME }}/.zshrc"

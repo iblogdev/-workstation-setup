@@ -23,11 +23,11 @@
     update_cache: yes
   when: ansible_distribution == "Ubuntu"
 
-- name: setup vscode extensions
-  ansible.builtin.copy:
-    src: files/home/.vscode/extensions.json
-    dest: "{{ ansible_env.HOME }}/.vscode/extensions.json"
-  when: ansible_distribution == "Ubuntu"  
+# - name: setup vscode extensions
+#   ansible.builtin.copy:
+#     src: files/home/.vscode/extensions.json
+#     dest: "{{ ansible_env.HOME }}/.vscode/extensions.json"
+#   when: ansible_distribution == "Ubuntu"  
 
 - name: Install vscode
   community.general.homebrew_cask:

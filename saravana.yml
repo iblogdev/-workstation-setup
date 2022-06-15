@@ -1,8 +1,8 @@
 - hosts: localhost
+  vars:
+    files_prefix: saravana
   connection: local
   tags: always
   roles:
   - base
   - workstation
-
-      
