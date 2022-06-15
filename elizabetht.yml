@@ -1,0 +1,8 @@
+- hosts: localhost
+  vars:
+    files_prefix: elizabetht
+  connection: local
+  tags: always
+  roles:
+  - base
+  - workstation

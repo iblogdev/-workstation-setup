@@ -1,0 +1,86 @@
+[core]
+    editor=vim
+[user]
+    name=Elizabeth Thomas
+    email=email2eliza@gmail.com
+[pull]
+    rebase=false
+[alias]
+  aliases = !"git config -l | grep alias | cut -c 7- | sort"
+  co = checkout
+  ci = commit
+  st = status --short --branch
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  # tags = tag -l
+  tags = !"git tag -l --format '%(tag) - %(taggerdate)' --sort=taggerdate"
+  branches = branch -avv
+  b = !git branches
+  remotes = remote -v
+  track = branch -u
+  amend = commit -a --amend --no-edit
+  amend-staged = commit --amend --no-edit
+  # only untracked files
+  untracked = ls-files --other --exclude-standard
+  # history for all branches, similar to output of omglog
+  histall = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short --all
+  type = cat-file -t
+  dump = cat-file -p
+  # remove files from index
+  unstage = reset HEAD
+  # uncommit the last commit, leaving the files in precommitted state
+  uncommit = reset --soft HEAD^
+  addremove = !git add . && git add -u
+  addall = add -A :/
+  delete-local-branch = branch -D
+  delete-remote-branch = push origin --delete
+  delete-local-reference-to-remote-branch = branch -rd
+  # push out a feature branch
+  pushfb = !git push -u origin $(git branchname)
+  serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+    # one line per commit, ascii graph log showing history from current commit
+  l = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%an]%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    # like above but shows history of all branches
+  la = !git l --all
+    # show just commits currently decorated by branch/tag pointers, really useful for high level picture
+  ld = !git l --all --simplify-by-decoration
+  # show the files were modified in each commit
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  # show the patch information for each commit
+  lp = log --patch  # show log messages with patch info, add a file name to just show details for a partiular file/directory
+  # create a new feature branch starting from origin/master that tracks it, and switch to it
+    nbm = !sh -c 'git checkout -B $(git config target.shortname)_IS-$1 origin/master && git branch -u origin/master $(git config target.shortname)_IS-$1' -
+    nbmh = !sh -c 'git checkout -B $(git config target.shortname)_PCT3-$1 origin/master && git branch -u origin/master $(git config target.shortname)_PCT3-$1' -
+    nbmb = !sh -c 'git checkout -B $(git config target.shortname)_$1 origin/master && git branch -u origin/master $(git config target.shortname)_$1' -
+  branchdiff = !"git difftool $(git merge-base HEAD origin/master)" # changes on branch not in origin/master
+  branchdifflog = !git log ..$1  # show log of commits in $1 (a branch name) that aren't in HEAD
+  root = !pwd -P  # shell commands can be executed with a ! prefix, they're always executed from git's root
+  sp = !git smart-pull
+  # git 1.8.5 or greater, also want to have set `git config --global pull.rebase preserve`
+  pr = !git pull --rebase
+  prom = !git pull --rebase origin master
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|main' | xargs -n 1 -r git branch -d"
+  # shows all unreachable commits that are subject to garbage collection as they're not pointed to by a branch, tag, or child commit
+  gc-ready-commits = !"for SHA in $(git fsck --unreachable | grep commit | cut -d\\  -f 3); do git log -n 1 $SHA; done"
+  # shows all unreachable commits by branch, tag, or child commit, but will show things still pointed at by the reflog (for now)
+  lost-commits = !"for SHA in $(git fsck --unreachable --no-reflogs | grep commit | cut -d\\  -f 3); do git log -n 1 $SHA; done"
+  # list all branches that aren't master/develop or the current branch
+  merged=!"git branch --merged origin/master | egrep -v \" origin/(master|develop)$\" | grep -v \\*"
+  # deletes branch references that have been fully merged into master on your local machine
+  prune-merged = !"git merged | xargs git branch -d"
+    # remove branches that are no longer upstream from local
+    missing-origin = !"git remote prune origin --dry-run"
+  # remove branches that are no longer upstream from local
+    prune-missing-origin = !"git remote prune origin"
+  pruneall = !"git prune-merged && git prune-missing-origin"
+  # current branch name
+  branchname = !git rev-parse --abbrev-ref HEAD
+  # clickable http link to github repo
+  repourl=!"echo https://$(git remote get-url --push origin | sed 's/git\\@\\(.*\\)\\.git/\\1/' | sed 's/:/\\//')"
+  # push out a feature branch with a clickable link for creating a pull request against your upstream origin branch
+  pusho = !git push origin $(git branchname) && echo "create a pull request at: $(git repourl)/compare/$(git for-each-ref --format='%(upstream:lstrip=3)' $(git symbolic-ref -q HEAD) 2>/dev/null || echo master | awk -F'/' '{print $NF}')...$(git branchname)?expand=1"
+  pushof = !git push -f origin $(git branchname) && echo "create a pull request at: $(git repourl)/compare/$(git for-each-ref --format='%(upstream:lstrip=3)' $(git symbolic-ref -q HEAD) 2>/dev/null || echo master | awk -F'/' '{print $NF}')...$(git branchname)?expand=1"
+[commit]
+    template = /Users/"$(whoami)"/.stCommitMsg
+[init]
+    defaultBranch = main
