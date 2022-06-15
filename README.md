@@ -15,3 +15,8 @@ ansible localhost -m setup
 ```bash
 ansible-playbook local.yml --ask-become-pass
 ```
+
+* install external roles
+```bash
+ansible-galaxy install -r requirements.yml
+```

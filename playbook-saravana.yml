@@ -1,0 +1,8 @@
+- hosts: localhost
+  vars:
+    file_prefix: saravana
+  connection: local
+  tags: always
+  roles:
+  - base
+  - zsh

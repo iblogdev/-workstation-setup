@@ -1,0 +1,17 @@
+---
+# tasks file for zsh
+- name: Install zsh
+  community.general.homebrew:
+    name: zsh
+    state: present
+  when: ansible_distribution == "MacOSX"  
+
+- name: Install oh-my-zsh
+  run_once: true
+  ansible.builtin.shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || exit 0
+  when: ansible_distribution == "MacOSX"
+
+- name: setup zshrc
+  ansible.builtin.copy:
+    src: "files/home/.{{ file_prefix }}_zshrc"
+    dest: "{{ ansible_env.HOME }}/.zshrc"
