@@ -13,3 +13,8 @@
   ansible.builtin.copy:
     src: files/home/.zshrc
     dest: "{{ ansible_env.HOME }}/.zshrc"
+
+- name: setup zprofile
+  ansible.builtin.copy:
+    src: files/home/.zprofile
+    dest: "{{ ansible_env.HOME }}/.zprofile"
