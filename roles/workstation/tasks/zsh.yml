@@ -1,6 +1,10 @@
 - name: Install zsh
   community.general.homebrew:
-    name: zsh
+    name: 
+      - zsh
+      - fzf
+      - zsh-autosuggestions
+      - zsh-syntax-highlighting
     state: present
   when: ansible_distribution == "MacOSX"  
 
