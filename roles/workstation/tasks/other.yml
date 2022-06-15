@@ -12,5 +12,11 @@
     name:
       - curl
       - wget
+      - jq
+      - colima
+      - kcat
+      - minikube
+      - vegeta
+      - watch
     state: present
   when: ansible_distribution == "MacOSX"      
