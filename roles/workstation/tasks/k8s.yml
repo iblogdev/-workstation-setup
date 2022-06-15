@@ -14,25 +14,25 @@
   run_once: true
   ansible.builtin.shell: helm plugin install https://github.com/jkroepke/helm-secrets --version v3.14.0 || exit 0
 
-- name: Install ktx
-  run_once: true
-  ansible.builtin.shell: | 
-    # Clone the ktx repo
-    git clone https://github.com/heptiolabs/ktx
-    cd ktx
+# - name: Install ktx
+#   become: true
+#   ansible.builtin.shell: | 
+#     # Clone the ktx repo
+#     git clone https://github.com/heptiolabs/ktx
+#     cd ktx
 
-    # Install the bash function
-    cp ktx "${HOME}"/.ktx
+#     # Install the bash function
+#     cp ktx "${HOME}"/.ktx
 
-    # Add this to your "${HOME}/".bash_profile (or similar)
-    source "${HOME}"/.ktx
+#     # Add this to your "${HOME}/".bash_profile (or similar)
+#     source "${HOME}"/.ktx
 
-    # Install the auto-completion
-    cp ktx-completion.sh "${HOME}"/.ktx-completion.sh
+#     # Install the auto-completion
+#     cp ktx-completion.sh "${HOME}"/.ktx-completion.sh
 
-    # Add this to your "${HOME}/".bash_profile (or similar)
-    source "${HOME}"/.ktx-completion.sh
+#     # Add this to your "${HOME}/".bash_profile (or similar)
+#     source "${HOME}"/.ktx-completion.sh
 
-    # Reload your shell
-    exec bash  
-  when: ansible_distribution == "MacOSX"  
+#     # Reload your shell
+#     exec bash  
+#   when: ansible_distribution == "MacOSX"  
