@@ -5,3 +5,6 @@
     email=saravanakumar.periyasamy@gmail.com
 [pull]
     rebase=false
+[gitreview]
+	remote = origin
+	username = saperiyasamy

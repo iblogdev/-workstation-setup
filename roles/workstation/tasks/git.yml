@@ -1,3 +1,9 @@
+- name: Install git-review
+  community.general.homebrew:
+    name: git-review
+    state: present
+  when: ansible_distribution == "MacOSX"
+
 - name: setup gitconfig
   ansible.builtin.copy:
     src: "files/{{ files_prefix }}/.gitconfig"
