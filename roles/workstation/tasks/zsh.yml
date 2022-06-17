@@ -22,3 +22,13 @@
   ansible.builtin.copy:
     src: "files/{{ files_prefix }}/.zprofile"
     dest: "{{ ansible_env.HOME }}/.zprofile"    
+
+- name: Add zsh to shells
+  become: true
+  ansible.builtin.copy:
+    src: "files/{{ files_prefix }}/etc/shells"
+    dest: "/etc/shells"
+
+- name: Set zsh as default
+  become: true
+  ansible.builtin.shell: chsh -s $(which zsh)

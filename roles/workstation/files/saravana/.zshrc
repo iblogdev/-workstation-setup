@@ -78,9 +78,14 @@ plugins=(
     kubectl
     macos
     terraform
+    ssh-agent
 )
 
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+zstyle :omz:plugins:ssh-agent identities ~/.ssh/saravana_id_rsa
+
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
