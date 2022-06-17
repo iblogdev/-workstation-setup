@@ -13,6 +13,8 @@
       - curl
       - wget
       - jq
+      - fx
+      - yh
       - colima
       - kcat
       - minikube
