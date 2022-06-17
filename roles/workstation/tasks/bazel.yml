@@ -1,5 +1,7 @@
 - name: Install bazel
   community.general.homebrew:
-    name: bazel
+    name: 
+      - bazel
+      - bazelisk
     state: present
   when: ansible_distribution == "MacOSX"
