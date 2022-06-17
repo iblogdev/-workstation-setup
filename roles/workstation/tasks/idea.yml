@@ -4,3 +4,9 @@
     name: intellij-idea-ultimate
     classic: yes
   when: ansible_distribution == "Ubuntu"  
+
+- name: Install Idea
+  community.general.homebrew_cask:
+    name: intellij-idea
+    state: present
+  when: ansible_distribution == "MacOSX"    
