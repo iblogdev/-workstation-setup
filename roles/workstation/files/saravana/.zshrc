@@ -71,22 +71,26 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    ansible
+    # ansible
     aws
     git
-    helm
+    # helm
     kubectl
-    macos
-    terraform
+    kube-ps1
+    # macos
+    # terraform
     # make sure turn off warp SSH wrapper, if using warp terminal
     ssh-agent
 )
 
+
+# ssh agent
 zstyle :omz:plugins:ssh-agent agent-forwarding yes
 zstyle :omz:plugins:ssh-agent identities ~/.ssh/saravana_id_rsa
 
 source $ZSH/oh-my-zsh.sh
 
+PROMPT='$(kube_ps1)'$PROMPT
 
 # User configuration
 
