@@ -4,6 +4,7 @@
      - helm
      - helmfile
      - kubernetes-cli
+     - kube-ps1
      - kustomize
      - sops
      - kind
