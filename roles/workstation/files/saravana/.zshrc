@@ -78,6 +78,7 @@ plugins=(
     kubectl
     macos
     terraform
+    # make sure turn off warp SSH wrapper, if using warp terminal
     ssh-agent
 )
 
