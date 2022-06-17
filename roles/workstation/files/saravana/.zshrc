@@ -76,10 +76,11 @@ plugins=(
     git
     # helm
     kubectl
+    # make sure to turn on "Honor user's custom prompt setting" in warp terminal
     kube-ps1
     # macos
     # terraform
-    # make sure turn off warp SSH wrapper, if using warp terminal
+    # make sure to turn off warp SSH wrapper, if using warp terminal
     ssh-agent
 )
 
