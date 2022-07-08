@@ -18,5 +18,6 @@
       - minikube
       - vegeta
       - watch
+      - gnu-tar
     state: present
   when: ansible_distribution == "MacOSX"      

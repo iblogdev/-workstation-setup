@@ -4,5 +4,6 @@
       - iterm2
       - warp
       - maccy
+      - sourcetree
     state: present
   when: ansible_distribution == "MacOSX"
