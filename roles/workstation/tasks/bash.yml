@@ -1,0 +1,5 @@
+- name: Install bash
+  community.general.homebrew:
+    name: bash
+    state: present
+  when: ansible_distribution == "MacOSX"  

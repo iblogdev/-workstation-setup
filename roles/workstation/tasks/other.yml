@@ -11,6 +11,7 @@
   community.general.homebrew:
     name:
       - curl
+      - hurl
       - wget
       - jq
       - fx
@@ -21,5 +22,9 @@
       - vegeta
       - watch
       - gnu-tar
+      - ctop
+      - jo
+      - jid
+      - jsonnet
     state: present
   when: ansible_distribution == "MacOSX"      

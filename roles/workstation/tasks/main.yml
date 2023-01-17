@@ -9,6 +9,7 @@
 - include_tasks: atom.yml
 - include_tasks: authy.yml
 - include_tasks: awscli.yml
+- include_tasks: bash.yml
 - include_tasks: bazel.yml
 - include_tasks: tmux.yml
 - include_tasks: chrome.yml

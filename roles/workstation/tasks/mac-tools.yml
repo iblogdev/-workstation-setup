@@ -5,5 +5,7 @@
       - warp
       - maccy
       - sourcetree
+      - spectacle
+      - skitch
     state: present
   when: ansible_distribution == "MacOSX"
